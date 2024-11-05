@@ -440,3 +440,11 @@ input[type="text"] {
     border: 1px solid #ccc; /* Keep border for input fields */
     border-radius: 4px;
 }
+
+.search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 50px;
+}
+

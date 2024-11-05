@@ -173,6 +173,12 @@
 
         <!-- Filter options as tabs -->
         <div class="filter-tabs">
+
+        <!-- Search option -->
+          <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="Search products..." oninput="searchProducts()" class="search-input">
+          </div>
+
           <div class="filter-group">
               <div class="filter-title" onclick="toggleDropdown('productDropdown')">Product Type</div>
               <div id="productDropdown" class="dropdown"></div>

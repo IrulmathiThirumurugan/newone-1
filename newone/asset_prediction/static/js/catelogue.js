@@ -315,4 +315,57 @@ window.onload = function() {
     renderProducts(products); // Initial render
 };
 
+// Initialize selected search query variable
+let searchQuery = "";
+
+// Function to search products based on search query
+function searchProducts() {
+    searchQuery = document.getElementById("searchInput").value.toLowerCase();
+    applyFilter(); // Apply filters and search together
+}
+
+// Updated applyFilter function to include search functionality
+function applyFilter() {
+    const sortOrder = document.getElementById('sortBy').value;
     
+    let filteredProducts = products;
+
+    // Filter products based on selected filters
+    if (selectedFilters.productTypes.length > 0) {
+        filteredProducts = filteredProducts.filter(product => selectedFilters.productTypes.includes(product.subcategory));
+    }
+    
+    if (selectedFilters.countries.length > 0) {
+        filteredProducts = filteredProducts.filter(product => selectedFilters.countries.includes(product.country));
+    }
+
+    if (selectedFilters.categories.length > 0) {
+        filteredProducts = filteredProducts.filter(product => selectedFilters.categories.includes(product.category));
+    }
+
+    if (selectedFilters.subcategories.length > 0) {
+        filteredProducts = filteredProducts.filter(product => selectedFilters.subcategories.includes(product.subcategory));
+    }
+
+    // Apply search query on filtered results
+    if (searchQuery) {
+        filteredProducts = filteredProducts.filter(product => {
+            return (
+                product.name.toLowerCase().includes(searchQuery) ||
+                product.category.toLowerCase().includes(searchQuery) ||
+                product.subcategory.toLowerCase().includes(searchQuery) ||
+                product.country.toLowerCase().includes(searchQuery)
+            );
+        });
+    }
+
+    // Sort products based on selected order
+    if (sortOrder === 'asc') {
+        filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === 'desc') {
+        filteredProducts.sort((a, b) => b.price - a.price);
+    }
+
+    // Render products based on the combined filters and search results
+    renderProducts(filteredProducts);
+}
