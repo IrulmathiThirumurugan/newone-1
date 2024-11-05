@@ -8,6 +8,6 @@ urlpatterns= [
     path("inventory",views.inventory,name='inventory'),
     path("aiinsights",views.aiinsights,name='aiinsights'),
     path("catalogue",views.catalogue,name='catalogue'),
-     path('/download_excel', views.download_excel, name='download_excel'),
+     path('download_excel', views.download_excel, name='download_excel'),
     
 ]
