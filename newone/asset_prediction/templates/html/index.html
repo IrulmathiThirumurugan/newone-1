@@ -16,6 +16,12 @@
     .clicked-row{
       background-color: #f0f8ff; /* Change color for clicke row*/
     }
+
+    .btn.active {
+    background-color: #0d6efd; /* Primary color */
+    color: white; /* White text */
+    border-color: #0d6efd; /* Match the border to the background */
+  }
   </style>
 </head>
  
@@ -120,15 +126,13 @@
                 <div class="notification bg-primary rounded-circle"></div>
               </a>
             </li>
-           
-           
-           
-           
           </ul>
           <a href=""  class="btn btn-primary me-2">Approval pending</a>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
               <div class="dropdown mx-3">
+                <button class="btn btn-outline-primary me-2 " id="srpButton">SRP</button>
+                <button class="btn btn-outline-primary me-2" id="geaButton">GEA</button>
                 <button id='dropDownMenuButton' class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <!-- Select country -->
                   <!-- First country will be displayed by default -->
@@ -319,7 +323,7 @@
   <script src="{% static 'js/app.min.js' %}"></script>
   <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
   <script src="{% static 'libs/simplebar/dist/simplebar.js' %}"></script>
-  <script src="{% static 'js/dashboard.js' %}"></script>
+  <!-- <script src="{% static 'js/dashboard.js' %}"></script> -->
   <script>
    
     function searchTable(){
@@ -378,10 +382,125 @@
     }
  
     renderDropdown();
+  
+    </script>
+
+<script>
+  // Function to clear the specific elements (table and charts)
+  function clearChartsAndTable() {
+    // Clear the table body content
+    const tableBody = document.querySelector('#predQuantityTable tbody');
+    if (tableBody) {
+      tableBody.innerHTML = ''; // Clear all rows in the table
+    }
+  
+    // Clear the chart containers
+    const chartContainer = document.querySelector('#chart');
+    if (chartContainer) {
+      chartContainer.innerHTML = ''; // Clear the chart container
+    }
+  
+    const breakupContainer = document.querySelector('#breakup');
+    if (breakupContainer) {
+      breakupContainer.innerHTML = ''; // Clear the breakup chart container
+    }
+  
+    const earningContainer = document.querySelector('#earning');
+    if (earningContainer) {
+      earningContainer.innerHTML = ''; // Clear the earning chart container
+    }
+  }
+  
+  // Function to cleanup old script logic
+  function cleanupOldScript(scriptId) {
+    if (typeof window.cleanup === 'function') {
+      console.log(`Cleaning up logic for ${scriptId}`);
+      window.cleanup(); // Ensure the cleanup function is defined in each script
+    } else {
+      console.warn(`No cleanup function found for ${scriptId}`);
+    }
+  }
+  
+  // Function to dynamically load a script
+  function loadScript(scriptPath, callback) {
+    // Clean up any existing script and related state
+    const existingScript = document.getElementById('dynamicScript');
+    if (existingScript) {
+      console.log('Removing existing script');
+      cleanupOldScript('dynamicScript'); // Cleanup logic before removing script
+      existingScript.remove();
+    }
+  
+    // Clear dynamic content areas (table and charts)
+    clearChartsAndTable();
+  
+    // Create a new script element
+    const script = document.createElement('script');
+    script.src = `${scriptPath}?v=${new Date().getTime()}`; // Cache-busting
+    script.id = 'dynamicScript';
+    script.onload = () => {
+      console.log(`${scriptPath} loaded successfully`);
+      if (typeof callback === 'function') {
+        callback(); // Initialize new script logic
+      }
+    };
+    script.onerror = () => {
+      console.error(`Failed to load script: ${scriptPath}`);
+    };
+  
+    // Append the script to the document body
+    document.body.appendChild(script);
+  }
+  
+  // Handle button active state
+  function setActiveButton(buttonId) {
+    document.querySelectorAll('.btn').forEach(button => {
+      button.classList.remove('active'); // Remove active state from all buttons
+    });
+    const selectedButton = document.getElementById(buttonId);
+    if (selectedButton) {
+      selectedButton.classList.add('active'); // Set active state for the selected button
+    }
+  }
+  
+  // Define actions after loading each script
+  function onPredQuantityLoad() {
+    console.log('Initializing predQuantity.js logic');
+    if (typeof initPredQuantity === 'function') {
+      initPredQuantity();
+    } else {
+      console.error('initPredQuantity function not found');
+    }
+  }
+  
+  function onGeaQuantityLoad() {
+    console.log('Initializing geaQuantity.js logic');
+    if (typeof initGeaQuantity === 'function') {
+      initGeaQuantity();
+    } else {
+      console.error('initGeaQuantity function not found');
+    }
+  }
+  
+  // Add event listeners to SRP and GEA buttons
+  document.getElementById('srpButton').addEventListener('click', () => {
+    setActiveButton('srpButton'); // Highlight active button
+    loadScript("{% static 'js/predQuantity.js' %}", onPredQuantityLoad);
+  });
+  
+  document.getElementById('geaButton').addEventListener('click', () => {
+    setActiveButton('geaButton'); // Highlight active button
+    loadScript("{% static 'js/geaQuantity.js' %}", onGeaQuantityLoad);
+  });
+  
+  // Load predQuantity.js by default on page load
+  window.onload = () => {
+    setActiveButton('srpButton'); // Set default active button
+    loadScript("{% static 'js/predQuantity.js' %}", onPredQuantityLoad);
+  };
   </script>
-  <script src="{% static 'js/predQuantity.js' %}"></script>
+   
 </body>
- 
 </html>
  
 <footer class="footer mt-auto py-3 bg-light">
@@ -396,6 +515,6 @@
               </span>
           </div>
       </div>
-  </div>
+  </div>    
 </footer>
  
