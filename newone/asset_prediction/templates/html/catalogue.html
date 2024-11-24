@@ -30,10 +30,6 @@
               <!-- Sidebar navigation-->
               <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
                 <ul id="sidebarnav">
-                  <!-- <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Home</span>
-                  </li> -->
                   <li class="sidebar-item">
                     <a class="sidebar-link" href="/src/html/" aria-expanded="false">
                       <span>
@@ -58,22 +54,6 @@
                       <span class="hide-menu">Catalogue</span>
                     </a>
                   </li>
-                  <!-- <li class="sidebar-item">
-                    <a class="sidebar-link" href="./excel.html" aria-expanded="false" style="pointer-events: none;">
-                      <span>
-                        <i class="ti ti-cloud-upload"></i>
-                      </span>
-                      <span class="hide-menu">Upload Excel</span>
-                    </a>
-                  </li> -->
-                  <!-- <li class="sidebar-item">
-                    <a class="sidebar-link" href="./integratesnow.html" aria-expanded="false">
-                      <span>
-                        <i class="ti ti-aperture"></i>
-                      </span>
-                      <span class="hide-menu">Integrate Snow</span>
-                    </a>
-                  </li> -->
                   <li class="sidebar-item">
                     <a class="sidebar-link" href="/inventory" aria-expanded="false">
                       <span>
@@ -150,14 +130,6 @@
                               <i class="ti ti-user fs-6"></i>
                               <p class="mb-0 fs-3">My Profile</p>
                             </a>
-                            <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                              <i class="ti ti-mail fs-6"></i>
-                              <p class="mb-0 fs-3">My Account</p>
-                            </a> -->
-                            <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                              <i class="ti ti-list-check fs-6"></i>
-                              <p class="mb-0 fs-3">My Task</p>
-                            </a> -->
                             <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                           </div>
                         </div>
@@ -215,34 +187,60 @@
             </div>
         </div>
 
-        <div id="renamePopup" class="popup" style="display: none;">
-          <div class="popup-content">
-              <span class="close" onclick="closeRenamePopup()">&times;</span>
-              <div class="popup-grid">
-                  <!-- Row 1: Headings -->
-                  <div class="label-small" style="font-weight: normal; border: none;">Existing Part Number</div>
-                  <div class="label-small" style="font-weight: normal; border: none;">New Part Number</div>
-      
-                  <!-- Row 2: Existing Part Number and New Part Number Input -->
-                  <div class="label-bold" id="existingPartName"></div>
-                  <input type="text" id="newPartNumber" />
-      
-                  <!-- Row 3: Existing Product Name and New Product Name Input -->
-                  <div class="label-small" style="font-weight: normal; border: none;">Existing Product Name</div>
-                  <div class="label-small" style="font-weight: normal; border: none;">New Product Name</div>
-      
-                  <div class="label-bold" id="existingProductName"></div>
-                  <input type="text" id="newProductName" />
-      
-                  <!-- Row 4: Stock Info -->
-                  <div class="label-small" style="font-weight: normal; border: none;">In Stock:</div>
-                  <div class="label-bold" id="partStock"></div>
-              </div>
-      
-              <p class="popup-notice">The existing part will be replaced with the new part after the existing stock is finished.</p>
-              <button class="save-button" onclick="saveNewName()">Save</button>
-          </div>
-      </div>
+      <div id="renamePopup" class="popup" 
+      style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 500px; max-height: 90%; overflow-y: auto; display: none;">
+ 
+     <!-- Header -->
+     <div class="d-flex justify-content-between align-items-center mb-4">
+         <h5 class="mb-0">Rename Part</h5>
+         <button type="button" class="btn-close" aria-label="Close" onclick="closeRenamePopup()"></button>
+     </div>
+ 
+     <!-- Form -->
+     <form>
+         <!-- Part Numbers: Side by Side -->
+         <div class="row mb-3">
+             <div class="col">
+                 <label for="existingPartName" class="form-label fw-bold">Existing Part Number</label>
+                 <div class="form-control-plaintext text-muted" id="existingPartName">PN001</div>
+             </div>
+             <div class="col">
+                 <label for="newPartNumber" class="form-label fw-bold">New Part Number</label>
+                 <input type="text" class="form-control" id="newPartNumber" placeholder="Enter new part number">
+             </div>
+         </div>
+ 
+         <!-- Product Names: Side by Side -->
+         <div class="row mb-3">
+             <div class="col">
+                 <label for="existingProductName" class="form-label fw-bold">Existing Product Name</label>
+                 <div class="form-control-plaintext text-muted" id="existingProductName">Wireless Headphones</div>
+             </div>
+             <div class="col">
+                 <label for="newProductName" class="form-label fw-bold">New Product Name</label>
+                 <input type="text" class="form-control" id="newProductName" placeholder="Enter new product name">
+             </div>
+         </div>
+ 
+         <!-- Stock Information -->
+         <div class="mb-3">
+             <label for="partStock" class="form-label fw-bold">In Stock</label>
+             <div class="form-control-plaintext text-muted" id="partStock">34</div>
+         </div>
+ 
+         <!-- Notice -->
+         <p class="text-muted small">The existing part will be replaced with the new part after the existing stock is finished.</p>
+ 
+         <!-- Save Button -->
+         <div class="text-end">
+             <!-- <button type="button" class="btn btn-primary" onclick="saveNewName()">Save</button> -->
+             <button type="button" class="btn btn-primary" onclick="closeRenamePopup()">Save</button>
+
+         </div>
+     </form>
+ </div>
+ 
+                                      
         <!-- Footer -->
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container">

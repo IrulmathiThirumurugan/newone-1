@@ -37,10 +37,6 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
           <ul id="sidebarnav">
-            <!-- <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Home</span>
-            </li> -->
             <li class="sidebar-item">
               <a class="sidebar-link" href="/src/html/" aria-expanded="false">
                 <span>
@@ -65,22 +61,6 @@
                 <span class="hide-menu">Catalogue</span>
               </a>
             </li>
-            <!-- <li class="sidebar-item">
-              <a class="sidebar-link" href="./excel.html" aria-expanded="false" style="pointer-events: none;">
-                <span>
-                  <i class="ti ti-cloud-upload"></i>
-                </span>
-                <span class="hide-menu">Upload Excel</span>
-              </a>
-            </li> -->
-            <!-- <li class="sidebar-item">
-              <a class="sidebar-link" href="./integratesnow.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-aperture"></i>
-                </span>
-                <span class="hide-menu">Integrate Snow</span>
-              </a>
-            </li> -->
             <li class="sidebar-item">
               <a class="sidebar-link" href="/inventory" aria-expanded="false">
                 <span>
@@ -130,16 +110,18 @@
           <a href=""  class="btn btn-primary me-2">Approval pending</a>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <div class="dropdown mx-3">
-                <button class="btn btn-outline-primary me-2 " id="srpButton">SRP</button>
-                <button class="btn btn-outline-primary me-2" id="geaButton">GEA</button>
+              <div class="dropdown mx-3">              
+                <div class="btn-group" role="group" aria-label="Toggle button group">
+                  <input type="radio" class="btn-check" name="options" id="srpButton" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="srpButton">SRP</label>               
+                  <input type="radio" class="btn-check" name="options" id="geaButton" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="geaButton"  style="margin-right: 10px;">GEA</label>
+                </div>
                 <button id='dropDownMenuButton' class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <!-- Select country -->
                   <!-- First country will be displayed by default -->
                 </button>
                 <ul id='countryDropdown' class="dropdown-menu">
-                  <!-- <li><a class="dropdown-item" href="#">Korea</a></li>
-                  <li><a class="dropdown-item" href="#">Belgium</a></li> -->
                 </ul>
               </div>
              
@@ -156,14 +138,6 @@
                       <i class="ti ti-user fs-6"></i>
                       <p class="mb-0 fs-3">My Profile</p>
                     </a>
-                    <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a> -->
-                    <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
-                    </a> -->
                     <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
@@ -492,7 +466,7 @@
     setActiveButton('geaButton'); // Highlight active button
     loadScript("{% static 'js/geaQuantity.js' %}", onGeaQuantityLoad);
   });
-  
+
   // Load predQuantity.js by default on page load
   window.onload = () => {
     setActiveButton('srpButton'); // Set default active button

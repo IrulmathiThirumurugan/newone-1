@@ -265,7 +265,6 @@ function renameProduct(partNumber) {
 
 
 // Function to close the popup
-// Function to close the popup
 function closeRenamePopup() {
     document.getElementById('renamePopup').style.display = 'none';
 }
