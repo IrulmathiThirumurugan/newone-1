@@ -411,7 +411,7 @@ function renderMonthlyOpenTasks() {
  
 // Main initialization function
 function initPredQuantity() {
-  console.log("Initializing geaQuantity.js");
+  console.log("Initializing predQuantity.js");
 
   // Populate the table
   populateTable();

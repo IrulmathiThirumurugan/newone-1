@@ -1,84 +1,77 @@
-predictedQuantity = [
-  {
-    'items':{
-      "part_number" : "4X41A30364",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
-    "predicted_quantity" : 7,
-    "cost" : 349589.52
-  },
-  {
-    'items':{
-      "part_number" : "4X41A30364",
-    },
-    "country" : "Seoul",
-    "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
-    "predicted_quantity" : 7,
-    "cost" : 349589.52
-  },
-  {
-    'items':{
-      "part_number" : "40AY0090EU",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "Universal USB-C Dock",
-    "predicted_quantity" : 1,
-    "cost" : 520222.50
-  },
-  {
-    'items':{
-      "part_number" : "40AY0090EU",
-    },
-    "country" : "Seoul",
-    "Model Designation" : "Universal USB-C Dock",
-    "predicted_quantity" : 1,
-    "cost" : 520222.50
-  },
-  {
-    'items':{
-      "part_number" : "21H2S7G11W",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "ThinkPad L14 Gen 4 (Win11) Korean",
-    "predicted_quantity" : 7,
-    "cost" : 7108320.24
-  },
-  {
-    'items':{
-      "part_number" : "63CFMARXKR",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
-    "predicted_quantity" : 1,
-    "cost" : 192829.14
-  },
-  {
-    'items':{
-      "part_number" : "63CFMARXKR",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
-    "predicted_quantity" : 1,
-    "cost" : 192829.14
-  },
-  {
-    'items':{
-      "part_number" : "63CFMARXKR",
-    },
-    "country" : "Cheonan-si",
-    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
-    "predicted_quantity" : 1,
-    "cost" : 192829.14
-  },
+// predictedQuantity = [
+//   {
+//     'items':{
+//       "part_number" : "21H2S7G11W",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "ThinkPad L14 Gen 4 (Win11) Korean",
+//     "predicted_quantity" : 7,
+//     "cost" : 7108320.24
+//   },
+//   {
+//     'items':{
+//       "part_number" : "63CFMARXKR",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+//     "predicted_quantity" : 1,
+//     "cost" : 192829.14
+//   },
+//   {
+//     'items':{
+//       "part_number" : "63CFMARXKR",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+//     "predicted_quantity" : 1,
+//     "cost" : 192829.14
+//   },
+//   {
+//     'items':{
+//       "part_number" : "63CFMARXKR",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+//     "predicted_quantity" : 1,
+//     "cost" : 192829.14
+//   },
   
   
-]
+// ]
 
 
 
 
-
+// predictedQuantity1 = [
+//   {
+//     'items':{
+//       "part_number" : "4X41A30364",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
+//     "predicted_quantity" : 7,
+//     "cost" : 349589.52
+//   },
+//   {
+//     'items':{
+//       "part_number" : "4X41A30364",
+//     },
+//     "country" : "Seoul",
+//     "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
+//     "predicted_quantity" : 7,
+//     "cost" : 349589.52
+//   },
+//   {
+//     'items':{
+//       "part_number" : "40AY0090EU",
+//     },
+//     "country" : "Cheonan-si",
+//     "Model Designation" : "Universal USB-C Dock",
+//     "predicted_quantity" : 1,
+//     "cost" : 520222.50
+//   },
+  
+//   ]
 
 
 

@@ -8,6 +8,215 @@
   <title>Asset Prediction</title>
   <link rel="shortcut icon" type="image/png" href="{% static 'images/logos/wipro_logo.png' %}" />
   <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+  <style>
+    /* General Button Styles */
+    .btn {
+      font-weight: 400;
+      font-size: 16px;
+      padding: 10px 20px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    /* SRP Theme */
+    .theme-srp .btn-primary {
+      background-color: #0056b3; /* SRP Primary Button Color */
+      border-color: #0056b3;
+      color: #ffffff;
+    }
+    
+    .theme-srp .btn-primary:hover,
+    .theme-srp .btn-primary:focus,
+    .theme-srp .btn-primary.active {
+      background-color: #00408d; /* Darker SRP Button Color for Active and Hover */
+      border-color: #00408d;
+    }
+    
+    .theme-srp .btn-outline-primary {
+      color: #0056b3; /* SRP Outline Button Text */
+      border: 2px solid #0056b3;
+      background-color: transparent;
+    }
+    
+    .theme-srp .btn-outline-primary:hover,
+    .theme-srp .btn-outline-primary:focus,
+    .theme-srp .btn-outline-primary.active {
+      background-color: #0056b3;
+      color: #ffffff;
+      border-color: #00408d;
+    }
+    
+    .theme-srp .btn-check:checked + .btn-outline-primary {
+      background-color: #00408d; /* Active SRP Toggle */
+      color: #ffffff;
+      border-color: #00408d;
+    }
+    
+    /* GEA Theme */
+    .theme-gea .btn-primary {
+      background-color: #FFA500; /* GEA Primary Button Color */
+      border-color: #FFA500;
+      color: #ffffff;
+    }
+    
+    .theme-gea .btn-primary:hover,
+    .theme-gea .btn-primary:focus,
+    .theme-gea .btn-primary.active {
+      background-color: #FF8C00; /* Darker GEA Button Color for Active and Hover */
+      border-color: #FF8C00;
+    }
+    
+    .theme-gea .btn-outline-primary {
+      color: #FFA500; /* GEA Outline Button Text */
+      border: 2px solid #FFA500;
+      background-color: transparent;
+    }
+    
+    .theme-gea .btn-outline-primary:hover,
+    .theme-gea .btn-outline-primary:focus,
+    .theme-gea .btn-outline-primary.active {
+      background-color: #FFA500;
+      color: #ffffff;
+      border-color: #FF8C00;
+    }
+    
+    .theme-gea .btn-check:checked + .btn-outline-primary {
+      background-color: #FF8C00; /* Active GEA Toggle */
+      color: #ffffff;
+      border-color: #FF8C00;
+    }
+    
+    /* Dropdown Styling */
+    .theme-srp .dropdown-menu {
+      background-color: #eef4f4; /* SRP Dropdown Background */
+      border-color: #20B2AA; /* SRP Dropdown Border */
+      color: #2F4F4F; /* SRP Text Color */
+    }
+    
+    .theme-gea .dropdown-menu {
+      background-color: #f1edf4; /* GEA Dropdown Background */
+      border-color: #FFBF00; /* GEA Dropdown Border */
+      color: #191970; /* GEA Text Color */
+    }
+    
+    .theme-srp #dropDownMenuButton {
+      background-color: #0056b3; /* SRP Dropdown Button */
+      color: #ffffff;
+      border-color: #00408d;
+    }
+    
+    .theme-gea #dropDownMenuButton {
+      background-color: #FFA500; /* GEA Dropdown Button */
+      color: #ffffff;
+      border-color: #FF8C00;
+    }
+    
+    .theme-srp #dropDownMenuButton:hover,
+    .theme-srp #dropDownMenuButton:focus {
+      background-color: #00408d;
+      color: #ffffff;
+    }
+    
+    .theme-gea #dropDownMenuButton:hover,
+    .theme-gea #dropDownMenuButton:focus {
+      background-color: #FF8C00;
+      color: #ffffff;
+    }
+/* Sidebar Link Styling */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  color: #495057; /* Default color for the text */
+}
+
+/* SRP Theme Sidebar Active Button */
+.theme-srp .sidebar-link.active {
+  background-color: #0056b3; /* SRP Active Background */
+  color: #ffffff; /* SRP Active Text */
+}
+
+/* SRP Theme Sidebar Hover Button */
+.theme-srp .sidebar-link:hover {
+  background-color: #eef4f4; /* SRP Hover Background */
+  color: #00408d; /* SRP Hover Text */
+}
+
+/* GEA Theme Sidebar Active Button */
+.theme-gea .sidebar-link.active {
+  background-color: #FFA500; /* GEA Active Background */
+  color: #ffffff; /* GEA Active Text */
+}
+
+/* GEA Theme Sidebar Hover Button */
+.theme-gea .sidebar-link:hover {
+  background-color: #FFF5E5; /* GEA Hover Background */
+  color: #FF8C00; /* GEA Hover Text */
+}
+
+/* Sidebar Icons */
+.theme-srp .sidebar-link i {
+  color: #0056b3; /* SRP Icon Color */
+}
+
+.theme-gea .sidebar-link i {
+  color: #FFA500; /* GEA Icon Color */
+}
+
+.theme-srp .sidebar-link.active i {
+  color: #ffffff; /* SRP Active Icon Color */
+}
+
+.theme-gea .sidebar-link.active i {
+  color: #ffffff; /* GEA Active Icon Color */
+}
+
+.theme-gea .sidebar-nav ul .sidebar-item.selected>.sidebar-link, .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active, .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+    background-color: #e25010;
+    color: #fff;
+}
+
+.theme-srp .sidebar-nav ul .sidebar-item.selected>.sidebar-link, .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active, .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+    background-color: #2910e2;
+    color: #fff;
+}
+
+/* Active sidebar item styles when 'srp' theme is active */
+.theme-srp .sidebar-nav ul .sidebar-item.active > .sidebar-link {
+  background-color:#2910e2; /* Customize this color for the SRP theme */
+  color: white; /* Text color for SRP active items */
+}
+
+/* Active sidebar item styles when 'gea' theme is active */
+.theme-gea .sidebar-nav ul .sidebar-item.active > .sidebar-link {
+  background-color: #e25010; /* Customize this color for the GEA theme */
+  color: white; /* Text color for GEA active items */
+}
+
+/* Default active item (SRP Theme) */
+.left-sidebar.theme-srp .sidebar-item.active > .sidebar-link {
+  background-color: #2910e2; /* SRP theme active background */
+  color: #fff; /* SRP theme active text color */
+}
+
+/* Active item for GEA Theme */
+.left-sidebar.theme-gea .sidebar-item.active > .sidebar-link {
+  background-color: #e25010; /* GEA theme active background */
+  color: #fff; /* GEA theme active text color */
+}
+
+/* General sidebar-link styles */
+.sidebar-item > .sidebar-link {
+  background-color: transparent;
+  color: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+</style>
 </head>
 
 <body>
@@ -213,7 +422,7 @@
   <script src="{% static 'libs/simplebar/dist/simplebar.js' %}"></script>
   <script src="{% static 'js/data.js' %}"></script>
   <script>
-    const countries = ['Korea'];
+    const countries = ['Korea', 'Australia', 'India', 'France', 'Germany', 'England'];
 
     function renderDropdown(){
       const dropdownMenu = document.getElementById('countryDropdown');
@@ -244,43 +453,249 @@
     renderDropdown();
   </script>
 
-  <script>
-    var headers = Object.keys(predictedQuantity[0]);
-    var headerRow = $('<tr>');
-    headers.forEach(function (header) {
-      headerRow.append($('<th style="text-transform: capitalize;">').text(header));
-    });
-    $('#table-header').append(headerRow);
 
-    predictedQuantity.forEach(function (item) {
-      var row = $('<tr>');
+<script>
+
+ var predictedQuantity = [
+  {
+    'items':{
+      "part_number" : "21H2S7G11W",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "ThinkPad L14 Gen 4 (Win11) Korean",
+    "predicted_quantity" : 7,
+    "cost" : 7108320.24
+  },
+  {
+    'items':{
+      "part_number" : "63CFMARXKR",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+    "predicted_quantity" : 1,
+    "cost" : 192829.14
+  },
+  {
+    'items':{
+      "part_number" : "63CFMARXKR",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+    "predicted_quantity" : 1,
+    "cost" : 192829.14
+  },
+  {
+    'items':{
+      "part_number" : "63CFMARXKR",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "ThinkVision T24i-30 23.8 inch",
+    "predicted_quantity" : 1,
+    "cost" : 192829.14
+  },
+  
+  
+]
+
+
+
+
+ var predictedQuantity1 = [
+  {
+    'items':{
+      "part_number" : "4X41A30364",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
+    "predicted_quantity" : 7,
+    "cost" : 349589.52
+  },
+  {
+    'items':{
+      "part_number" : "4X41A30364",
+    },
+    "country" : "Seoul",
+    "Model Designation" : "BO Essential Plus 15.6 BackPack (Eco)",
+    "predicted_quantity" : 7,
+    "cost" : 349589.52
+  },
+  {
+    'items':{
+      "part_number" : "40AY0090EU",
+    },
+    "country" : "Cheonan-si",
+    "Model Designation" : "Universal USB-C Dock",
+    "predicted_quantity" : 1,
+    "cost" : 520222.50
+  },
+  
+  ]
+  // Function to normalize dataset by flattening nested objects
+  function normalizeDataset(dataset) {
+    return dataset.map(item => {
+      const normalizedItem = { ...item }; // Create a shallow copy of the item
+
+      // If 'items' exists and has 'part_number', bring it to the top level
+      if (item.items && item.items.part_number) {
+        normalizedItem.part_number = item.items.part_number;
+      }
+
+      return normalizedItem;
+    });
+  }
+
+  // Function to render the table based on the dataset
+  function renderTable(dataset) {
+    // Check if dataset is valid
+    if (!dataset || dataset.length === 0) {
+      console.error('Dataset is empty or undefined');
+      return;
+    }
+
+    // Normalize the dataset
+    const normalizedDataset = normalizeDataset(dataset);
+
+    // Ensure table elements exist in the DOM
+    const tableHeader = $('#table-header');
+    const tableBody = $('#table-body');
+    if (!tableHeader.length || !tableBody.length) {
+      console.error('Table elements are missing in the DOM');
+      return;
+    }
+
+    // Clear existing table content
+    tableHeader.empty();
+    tableBody.empty();
+
+    // Get the headers from the normalized dataset
+    const headers = Object.keys(normalizedDataset[0]);
+    const headerRow = $('<tr>');
+    headers.forEach(function (header) {
+      headerRow.append($('<th class="header-text">').text(header)); // Use a CSS class instead of inline styles
+    });
+    tableHeader.append(headerRow);
+
+    // Populate the table rows
+    normalizedDataset.forEach(function (item) {
+      const row = $('<tr>');
       headers.forEach(function (header) {
-        var cellValue = item[header];
+        let cellValue = item[header];
         if (typeof cellValue === 'object' && cellValue !== null) {
           cellValue = cellValue.part_number || '';
         }
 
-        // Check if the header is 'predicted_quantity' to add an input tag
+        // Add input tag for 'predicted_quantity'
         if (header === 'predicted_quantity') {
-          // Create an input tag for the predicted quantity
-          var input = $('<input class="form-control inputWidth" >').attr('type', 'text').val(cellValue);
+          const input = $('<input class="form-control inputWidth">')
+            .attr('type', 'text')
+            .val(cellValue)
+            .on('change', function () {
+              console.log(`Updated value for predicted_quantity: ${$(this).val()}`);
+            }); // Add change event listener to capture user input
           row.append($('<td>').append(input));
         } else {
-          // Otherwise, just add the text as usual
           row.append($('<td>').text(cellValue));
         }
       });
-      $('#table-body').append(row);
+      tableBody.append(row);
     });
+  }
 
-    // Change button color when clicked
-    $('#submit-button').on('click', function() {
-      $(this).css({
-        'background-color': 'green',  // Change the color to green
-        'border-color': 'green'
-      });
+  // Function to determine which dataset to render
+  function loadDataset() {
+    const state = localStorage.getItem('toggleState') || 'srp'; // Default to 'srp'
+
+    // Validate state and load corresponding dataset
+    if (state === 'srp') {
+      renderTable(predictedQuantity);
+    } else if (state === 'gea') {
+      renderTable(predictedQuantity1);
+    } else {
+      console.warn('Invalid state in localStorage, defaulting to "srp"');
+      renderTable(predictedQuantity);
+    }
+  }
+
+  // Change button color when clicked
+  $('#submit-button').on('click', function () {
+    $(this).css({
+      'background-color': 'green',
+      'border-color': 'green',
     });
-  </script>
+  });
+
+  // Load the appropriate dataset on page load
+  $(document).ready(function () {
+    loadDataset();
+  });
+
+  window.onload = () => {
+  const currentPath = window.location.pathname;
+  const theme = localStorage.getItem('toggleState') || 'srp'; // Get the saved theme
+
+  switchTheme(theme); // Apply the saved theme
+  setActiveSidebarItem(currentPath); // Set the active sidebar item
+};
+
+
+function switchTheme(state) {
+  const body = document.body;
+  const pageWrapper = document.getElementById('main-wrapper');
+  const sidebar = document.querySelector('.left-sidebar'); // Sidebar element
+
+  // Remove existing theme classes
+  body.classList.remove('theme-srp', 'theme-gea');
+  pageWrapper.classList.remove('theme-srp', 'theme-gea');
+  sidebar.classList.remove('theme-srp', 'theme-gea'); // Reset sidebar theme
+
+  // Apply the selected theme
+  if (state === 'srp') {
+    body.classList.add('theme-srp');
+    pageWrapper.classList.add('theme-srp');
+    sidebar.classList.add('theme-srp');
+  } else if (state === 'gea') {
+    body.classList.add('theme-gea');
+    pageWrapper.classList.add('theme-gea');
+    sidebar.classList.add('theme-gea');
+  }
+}
+
+function setActiveSidebarItem(currentPath) {
+  // Reset all sidebar items
+  const sidebarItems = document.querySelectorAll('.sidebar-item');
+  sidebarItems.forEach((item) => {
+    item.classList.remove('active');
+  });
+
+  // Find and activate the current sidebar item
+  const activeLink = document.querySelector(`.sidebar-link[href='${currentPath}']`);
+  if (activeLink) {
+    const activeItem = activeLink.parentElement; // Select the parent <li> element
+    activeItem.classList.add('active');
+  }
+}
+
+
+function updateButtonStyles(theme) {
+  const buttons = document.querySelectorAll('.btn-outline-primary');
+
+  buttons.forEach((button) => {
+    // Reset all buttons
+    button.classList.remove('active');
+    button.style.fontWeight = '400';
+    button.style.fontSize = '16px';
+
+    // Apply active styles to the selected button
+    if (
+      (theme === 'srp' && button.id === 'srpButton') ||
+      (theme === 'gea' && button.id === 'geaButton')
+    ) {
+      button.classList.add('active');
+    }
+  });
+}
+</script>
+
 
 </body>
 

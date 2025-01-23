@@ -1,9 +1,9 @@
 let products = [
-    { "partNumber": "PN001", "name": "Wireless Headphones", "category": "Audio", "subcategory": "Headphones", "price": 99.99, "country": "USA", "instock": 34 },
-    { "partNumber": "PN002", "name": "Gaming Monitor", "category": "Displays", "subcategory": "Monitors", "price": 249.99, "country": "Germany", "instock": 82 },
+    { "partNumber": "PN00001", "name": "Wireless Headphones", "category": "Audio", "subcategory": "Headphones", "price": 99.99, "country": "USA", "instock": 34 },
+    { "partNumber": "PN000002", "name": "Gaming Monitor", "category": "Displays", "subcategory": "Monitors", "price": 249.99, "country": "Germany", "instock": 82 },
     { "partNumber": "PN003", "name": "Mechanical Keyboard", "category": "Input", "subcategory": "Keyboards", "price": 59.99, "country": "China", "instock": 45 },
     { "partNumber": "PN004", "name": "Smartphone", "category": "Mobile", "subcategory": "Phones", "price": 799.99, "country": "Japan", "instock": 22 },
-    { "partNumber": "PN005", "name": "Bluetooth Speaker", "category": "Audio", "subcategory": "Speakers", "price": 49.99, "country": "USA", "instock": 76 },
+    { "partNumber": "PN000005", "name": "Bluetooth Speaker", "category": "Audio", "subcategory": "Speakers", "price": 49.99, "country": "USA", "instock": 76 },
     { "partNumber": "PN006", "name": "Laptop X", "category": "Computers", "subcategory": "Laptops", "price": 1299.99, "country": "USA", "instock": 12 },
     { "partNumber": "PN007", "name": "4K TV", "category": "Home Entertainment", "subcategory": "Televisions", "price": 499.99, "country": "South Korea", "instock": 58 },
     { "partNumber": "PN008", "name": "Smartwatch Pro", "category": "Wearables", "subcategory": "Watches", "price": 199.99, "country": "USA", "instock": 27 },
@@ -312,7 +312,15 @@ function deleteProduct(partNumber) {
 window.onload = function() {
     populateDropdowns(); // Populate all dropdowns
     renderProducts(products); // Initial render
+
+    const currentPath = window.location.pathname;
+   const theme = localStorage.getItem('toggleState') || 'srp'; // Get the saved theme
+
+   switchTheme(theme); // Apply the saved theme
+   setActiveSidebarItem(currentPath); // Set the active sidebar item
+
 };
+
 
 // Initialize selected search query variable
 let searchQuery = "";
@@ -368,3 +376,60 @@ function applyFilter() {
     // Render products based on the combined filters and search results
     renderProducts(filteredProducts);
 }
+
+function switchTheme(state) {
+    const body = document.body;
+    const pageWrapper = document.getElementById('main-wrapper');
+    const sidebar = document.querySelector('.left-sidebar'); // Sidebar element
+  
+    // Remove existing theme classes
+    body.classList.remove('theme-srp', 'theme-gea');
+    pageWrapper.classList.remove('theme-srp', 'theme-gea');
+    sidebar.classList.remove('theme-srp', 'theme-gea'); // Reset sidebar theme
+  
+    // Apply the selected theme
+    if (state === 'srp') {
+      body.classList.add('theme-srp');
+      pageWrapper.classList.add('theme-srp');
+      sidebar.classList.add('theme-srp');
+    } else if (state === 'gea') {
+      body.classList.add('theme-gea');
+      pageWrapper.classList.add('theme-gea');
+      sidebar.classList.add('theme-gea');
+    }
+  }
+  
+  function setActiveSidebarItem(currentPath) {
+    // Reset all sidebar items
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach((item) => {
+      item.classList.remove('active');
+    });
+  
+    // Find and activate the current sidebar item
+    const activeLink = document.querySelector(`.sidebar-link[href='${currentPath}']`);
+    if (activeLink) {
+      const activeItem = activeLink.parentElement; // Select the parent <li> element
+      activeItem.classList.add('active');
+    }
+  }
+  
+  
+  function updateButtonStyles(theme) {
+    const buttons = document.querySelectorAll('.btn-outline-primary');
+  
+    buttons.forEach((button) => {
+      // Reset all buttons
+      button.classList.remove('active');
+      button.style.fontWeight = '400';
+      button.style.fontSize = '16px';
+  
+      // Apply active styles to the selected button
+      if (
+        (theme === 'srp' && button.id === 'srpButton') ||
+        (theme === 'gea' && button.id === 'geaButton')
+      ) {
+        button.classList.add('active');
+      }
+    });
+  }

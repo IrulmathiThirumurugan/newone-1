@@ -421,6 +421,8 @@ var jsonData = [
     }
     ];
    
+var productjs;
+
   var productjs =[
     {
         "Product": "4Y51C21217",
@@ -1565,9 +1567,73 @@ var jsonData = [
    
   // Current chart instance for bar chart destruction
   var currentBarChart = null;
-   
+
+//   function getdata(get_url) {
+
+//     return new Promise(function (resolve, reject) {
+    
+//       $.ajax({
+    
+//         url: get_url,
+    
+//         type: 'GET',  // GET is the default, but you can specify it here
+    
+//         headers: {
+    
+//           'ngrok-skip-browser-warning': '1'  // Custom header to skip browser warning for ngrok
+    
+//         },
+    
+//         success: function (data) {
+    
+//           resolve(data);  // Resolve the promise with the API data
+    
+//         },
+    
+//         error: function (jqXHR, textStatus, errorThrown) {
+    
+//           reject(new Error('Request failed: ' + textStatus));  // Reject the promise in case of error
+    
+//         }
+    
+//       });
+    
+//     });
+    
+//     }
+    
+//     var productjs;
+
+//     async function fetchData123() {
+
+//         //  productjs = await getdata('https://piranha-robust-polliwog.ngrok-free.app/dashboardinv');
+        
+//         productjs = await getdata('http://127.0.0.1:5000//dashboardinv');
+        
+        
+        
+//         // The next line will only be executed once productjs has been retrieved
+        
+//         console.log(productjs);
+        
+        
+        
+//         // Continue with other code
+        
+//         // ...other logic here
+        
+//         }
+        
+//         fetchData123();
+        
   // Populate the table with data
-  function populateTable() {
+  async function populateTable() {
+    // var Url_path = "http://127.0.0.1:5000/dashboardgeapq"
+
+    // var jsonData = await getdata("http://127.0.0.1:5000/dashboardgeapq");
+
+    // console.log(jsonData);
+
     const tableBody = document.querySelector('#predQuantityTable tbody');
     jsonData.forEach((item, index) => {
         const row = document.createElement('tr');
@@ -1592,8 +1658,9 @@ var jsonData = [
             document.querySelectorAll('tr').forEach(r => r.classList.remove('clicked-row'));
             row.classList.add('clicked-row');
    
-            const selectedProduct = item.Product;
-            const selectedProductData = productjs.find(prodItem => prodItem.Product === selectedProduct);
+            const selectedProduct = item["Part Number"];
+            const selectedProductLocation = item.City;
+            const selectedProductData = productjs.find(prodItem => prodItem.Product === ((prodItem.Product === selectedProduct)&& (prodItem["Location"]===selectedProductLocation) ));
    
             if (selectedProductData) {
                 updateBarChart(selectedProductData.Inventory, selectedProductData.Avg_demand, selectedProductData.Predicted);
@@ -1630,7 +1697,7 @@ var jsonData = [
             fontFamily: 'inherit',
             sparkline: { enabled: false },
         },
-        colors: ["#5D87FF", "#49BEFF"],
+        colors: ["#ea7705", "#df0a0a"],
         plotOptions: {
             bar: {
                 horizontal: false,
@@ -1698,7 +1765,7 @@ var jsonData = [
         stroke: { show: false },
         dataLabels: { enabled: false },
         legend: { show: false },
-        colors: ["#5D87FF", "#ecf2ff", "#F9F9FD"],
+        colors: ["#ea7705", "#df0a0a", "#e7ea05"],
         responsive: [
             { breakpoint: 991, options: { chart: { width: 150 } } }
         ],
@@ -1724,12 +1791,12 @@ var jsonData = [
         series: [
             {
                 name: "Open Tasks",
-                color: "#49BEFF",
+                color: "#ea7705",
                 data: [25, 66, 20, 40, 12, 58, 20]  // Static data
             }
         ],
         stroke: { curve: "smooth", width: 2 },
-        fill: { colors: ["#f3feff"], type: "solid", opacity: 0.05 },
+        fill: { colors: ["#df0a0a"], type: "solid", opacity: 0.05 },
         markers: { size: 0 },
         tooltip: {
             theme: "dark",

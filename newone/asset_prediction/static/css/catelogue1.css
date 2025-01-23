@@ -1,0 +1,662 @@
+.background{
+    background-color: #49BEFF;
+ }
+.inputWidth{
+    min-width: 50%;
+    width: 50%;
+  }
+
+  .container {
+margin: 0 auto;
+padding: 20px;
+max-width: 1000px;
+}
+.filter-tabs {
+display: flex;
+justify-content: flex-start;
+margin-bottom: 20px;
+flex-wrap: wrap; /* Allow wrapping of filter tabs */
+}
+.filter-group {
+position: relative;
+display: inline-block;
+margin-right: 15px;
+margin-bottom: 10px; /* Added space between rows */
+}
+.filter-title {
+cursor: pointer;
+padding: 10px 15px;
+background: #fff;
+border: 1px solid #ccc;
+border-radius: 4px;
+text-align: center;
+}
+.dropdown {
+display: none;
+position: absolute;
+background-color: #ffffff;
+box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+z-index: 10; /* Ensure dropdown is above other elements */
+padding: 10px;
+border-radius: 8px;
+min-width: 200px;
+max-height: 200px;
+overflow-y: auto; /* Enables scrolling */
+border: 1px solid #ccc;
+top: 35px; /* Adjust position below the filter title */
+}
+.dropdown.show {
+display: block;
+}
+.dropdown label {
+display: block;
+margin: 5px 0;
+cursor: pointer;
+}
+.sort-container {
+margin-bottom: 15px;
+}
+.sort-select {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: 120px;
+}
+.product {
+display: flex;
+background-color: white;
+border-radius: 8px;
+padding: 20px; /* Increased padding for larger tiles */
+margin-bottom: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+position: relative; /* Added for positioning the action dots */
+cursor: pointer; /* Indicate clickable */
+transition: transform 0.2s; /* Smooth hover effect */
+}
+.product:hover {
+transform: scale(1.02); /* Slightly enlarge on hover */
+}
+.product img {
+width: 150px; /* Increased image size */
+height: 150px; /* Increased image size */
+object-fit: cover;
+border-radius: 8px;
+margin-right: 20px;
+}
+.product-details {
+flex-grow: 1;
+}
+.product-details h3 {
+font-size: 18px; /* Increased font size */
+margin: 0;
+margin-bottom: 8px;
+font-weight: bold;
+}
+.product-details p {
+margin: 0;
+margin-bottom: 5px;
+color: #555;
+font-size: 14px; /* Adjusted font size for details */
+}
+.product-actions {
+position: absolute; /* Changed to absolute to position it in the corner */
+top: 10px;
+right: 10px;
+}
+.dots {
+cursor: pointer;
+font-size: 14px; /* Reduced size for dots */
+color: #007bff;
+line-height: 0; /* Centers the dots */
+}
+.dropdown-menu {
+display: none;
+position: absolute;
+right: 0;
+top: 30px;
+background-color: #ffffff;
+box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+z-index: 1;
+padding: 10px;
+border-radius: 8px;
+min-width: 120px;
+}
+.dropdown-menu button {
+background: #007bff; /* Stylish button background */
+border: none;
+color: white; /* White text */
+padding: 10px; /* Padding for buttons */
+width: 100%;
+text-align: center; /* Center text */
+border-radius: 4px; /* Rounded corners */
+margin: 5px 0; /* Spacing between buttons */
+cursor: pointer; /* Pointer cursor */
+transition: background-color 0.3s; /* Smooth transition for hover */
+}
+.dropdown-menu button:hover {
+background: #0056b3; /* Darker on hover */
+}
+/* Tag Styles */
+.selected-filters {
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 15px;
+}
+.filter-tag {
+background: #007bff;
+color: white;
+padding: 5px 10px;
+border-radius: 4px;
+margin-right: 5px;
+margin-bottom: 5px;
+cursor: pointer;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.product {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.product img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.product-actions {
+    margin-left: 0;
+    align-self: flex-end;
+}
+}
+/* Popup styling */
+/* Popup styling */
+.popup {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+backdrop-filter: blur(5px); /* Slight blur effect for modern look */
+}
+
+.popup-content {
+background-color: #fff; /* Clean white background */
+margin: 10% auto; /* Vertical and horizontal centering */
+padding: 25px;
+border-radius: 12px; /* Rounded corners for smoothness */
+width: 50%; /* Adjust width for responsiveness */
+max-width: 600px; /* Ensure it doesn't get too large */
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+position: relative; /* For close button positioning */
+font-family: 'Nunito', sans-serif; /* Match font with the rest of the page */
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two columns */
+grid-gap: 20px; /* Increased spacing between elements for better readability */
+margin-bottom: 20px;
+}
+
+.popup-grid div {
+color: #333; /* Darker text for clarity */
+font-weight: 600; /* Slightly bold for labels */
+}
+
+.popup-grid input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc; /* Border matches the rest of the page */
+border-radius: 6px;
+font-size: 14px; /* Consistent font size */
+color: #333; /* Dark text for readability */
+}
+
+.popup-notice {
+font-size: 14px;
+color: #555;
+text-align: center;
+margin-top: 10px;
+font-style: italic; /* Italicized for emphasis */
+}
+
+button {
+display: block;
+margin: 20px auto;
+padding: 12px 30px;
+background-color: #007bff; /* Primary blue color for consistency */
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Close button */
+.close {
+position: absolute;
+top: 15px;
+right: 20px;
+color: #aaa;
+font-size: 24px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+cursor: pointer;
+}
+/* Popup styling */
+.popup {
+display: none; /* Hidden by default, shown when 'display: block' */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+justify-content: center;
+align-items: center;
+z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.popup-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+width: 500px; /* Width of the popup */
+max-width: 90%;
+position: relative;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add some shadow */
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* 2 columns */
+gap: 10px; /* Space between grid items */
+margin-bottom: 20px; /* Space below the grid */
+}
+
+.popup-grid div, /* Style for grid items */
+input[type="text"] {
+padding: 10px; /* Add padding */
+border: 1px solid #ccc; /* Add border */
+border-radius: 4px; /* Round corners */
+}
+
+input[type="text"] {
+width: 100%; /* Make input full width */
+}
+
+.popup-notice {
+font-size: 0.9em; /* Slightly smaller text */
+color: #555; /* Gray color for notice */
+}
+
+.save-button {
+background-color: #4CAF50; /* Green background */
+color: white; /* White text */
+border: none; /* Remove border */
+padding: 10px 15px; /* Padding for button */
+border-radius: 4px; /* Round corners */
+cursor: pointer; /* Pointer on hover */
+font-size: 1em; /* Button text size */
+}
+
+.save-button:hover {
+background-color: #45a049; /* Darker green on hover */
+}
+
+.label-small {
+font-size: 12px;
+color: #666;
+margin-bottom: 4px;
+}
+
+.label-bold {
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr;
+grid-row-gap: 10px;
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 14px;
+width: 100%;
+box-sizing: border-box;
+margin-bottom: 16px;
+}
+.label-small {
+font-size: 12px;
+color: #666;
+margin-bottom: 4px;
+}
+
+.label-bold {
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two equal columns */
+grid-column-gap: 20px; /* Space between columns */
+grid-row-gap: 10px;
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 14px;
+width: 100%;
+box-sizing: border-box;
+margin-bottom: 16px;
+}
+.label-small {
+font-size: 12px;
+color: #666;
+}
+
+.label-bold {
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two equal columns for headings and inputs */
+grid-column-gap: 20px; /* Space between columns */
+grid-row-gap: 10px;
+align-items: center; /* Aligns the items in the grid vertically */
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 14px;
+width: 100%;
+box-sizing: border-box;
+}
+.label-small {
+font-size: 12px;
+color: #666;
+border: none; /* Ensures no borders are applied */
+}
+
+.label-bold {
+font-weight: bold;
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.popup-grid {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two equal columns for headings and inputs */
+grid-column-gap: 20px; /* Space between columns */
+grid-row-gap: 10px;
+align-items: center; /* Aligns the items in the grid vertically */
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 14px;
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #ccc; /* Input box styling */
+border-radius: 4px;
+}
+.label-small {
+font-size: 12px;
+color: #666;
+border: none;
+border-color: white;  /* Ensures no border is applied */
+padding: 0;    /* Optional: Adjust padding if needed */
+margin: 0;     /* Optional: Adjust margin if needed */
+box-shadow: none;  /* Ensures no shadow or other border effects */
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 14px;
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #ccc; /* Keep border for input fields */
+border-radius: 4px;
+}
+
+.search-input {
+padding: 5px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-bottom: 50px;
+}
+
+.btn {
+font-weight: 400;
+font-size: 16px;
+padding: 10px 20px;
+transition: all 0.3s ease-in-out;
+}
+
+/* SRP Theme */
+.theme-srp .btn-primary {
+background-color: #0056b3; /* SRP Primary Button Color */
+border-color: #0056b3;
+color: #ffffff;
+}
+
+.theme-srp .btn-primary:hover,
+.theme-srp .btn-primary:focus,
+.theme-srp .btn-primary.active {
+background-color: #00408d; /* Darker SRP Button Color for Active and Hover */
+border-color: #00408d;
+}
+
+.theme-srp .btn-outline-primary {
+color: #0056b3; /* SRP Outline Button Text */
+border: 2px solid #0056b3;
+background-color: transparent;
+}
+
+.theme-srp .btn-outline-primary:hover,
+.theme-srp .btn-outline-primary:focus,
+.theme-srp .btn-outline-primary.active {
+background-color: #0056b3;
+color: #ffffff;
+border-color: #00408d;
+}
+
+.theme-srp .btn-check:checked + .btn-outline-primary {
+background-color: #00408d; /* Active SRP Toggle */
+color: #ffffff;
+border-color: #00408d;
+}
+
+/* GEA Theme */
+.theme-gea .btn-primary {
+background-color: #FFA500; /* GEA Primary Button Color */
+border-color: #FFA500;
+color: #ffffff;
+}
+
+.theme-gea .btn-primary:hover,
+.theme-gea .btn-primary:focus,
+.theme-gea .btn-primary.active {
+background-color: #FF8C00; /* Darker GEA Button Color for Active and Hover */
+border-color: #FF8C00;
+}
+
+.theme-gea .btn-outline-primary {
+color: #FFA500; /* GEA Outline Button Text */
+border: 2px solid #FFA500;
+background-color: transparent;
+}
+
+.theme-gea .btn-outline-primary:hover,
+.theme-gea .btn-outline-primary:focus,
+.theme-gea .btn-outline-primary.active {
+background-color: #FFA500;
+color: #ffffff;
+border-color: #FF8C00;
+}
+
+.theme-gea .btn-check:checked + .btn-outline-primary {
+background-color: #FF8C00; /* Active GEA Toggle */
+color: #ffffff;
+border-color: #FF8C00;
+}
+
+/* Dropdown Styling */
+.theme-srp .dropdown-menu {
+background-color: #eef4f4; /* SRP Dropdown Background */
+border-color: #20B2AA; /* SRP Dropdown Border */
+color: #2F4F4F; /* SRP Text Color */
+}
+
+.theme-gea .dropdown-menu {
+background-color: #f1edf4; /* GEA Dropdown Background */
+border-color: #FFBF00; /* GEA Dropdown Border */
+color: #191970; /* GEA Text Color */
+}
+
+.theme-srp #dropDownMenuButton {
+background-color: #0056b3; /* SRP Dropdown Button */
+color: #ffffff;
+border-color: #00408d;
+}
+
+.theme-gea #dropDownMenuButton {
+background-color: #FFA500; /* GEA Dropdown Button */
+color: #ffffff;
+border-color: #FF8C00;
+}
+
+.theme-srp #dropDownMenuButton:hover,
+.theme-srp #dropDownMenuButton:focus {
+background-color: #00408d;
+color: #ffffff;
+}
+
+.theme-gea #dropDownMenuButton:hover,
+.theme-gea #dropDownMenuButton:focus {
+background-color: #FF8C00;
+color: #ffffff;
+}
+/* Sidebar Link Styling */
+.sidebar-link {
+display: flex;
+align-items: center;
+padding: 10px 20px;
+border-radius: 5px;
+transition: all 0.3s ease-in-out;
+text-decoration: none;
+font-weight: 400;
+font-size: 16px;
+color: #495057; /* Default color for the text */
+}
+
+/* SRP Theme Sidebar Active Button */
+.theme-srp .sidebar-link.active {
+background-color: #0056b3; /* SRP Active Background */
+color: #ffffff; /* SRP Active Text */
+}
+
+/* SRP Theme Sidebar Hover Button */
+.theme-srp .sidebar-link:hover {
+background-color: #eef4f4; /* SRP Hover Background */
+color: #00408d; /* SRP Hover Text */
+}
+
+/* GEA Theme Sidebar Active Button */
+.theme-gea .sidebar-link.active {
+background-color: #FFA500; /* GEA Active Background */
+color: #ffffff; /* GEA Active Text */
+}
+
+/* GEA Theme Sidebar Hover Button */
+.theme-gea .sidebar-link:hover {
+background-color: #FFF5E5; /* GEA Hover Background */
+color: #FF8C00; /* GEA Hover Text */
+}
+
+/* Sidebar Icons */
+.theme-srp .sidebar-link i {
+color: #0056b3; /* SRP Icon Color */
+}
+
+.theme-gea .sidebar-link i {
+color: #FFA500; /* GEA Icon Color */
+}
+
+.theme-srp .sidebar-link.active i {
+color: #ffffff; /* SRP Active Icon Color */
+}
+
+.theme-gea .sidebar-link.active i {
+color: #ffffff; /* GEA Active Icon Color */
+}
+
+.theme-gea .sidebar-nav ul .sidebar-item.selected>.sidebar-link, .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active, .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+background-color: #e25010;
+color: #fff;
+}
+
+.theme-srp .sidebar-nav ul .sidebar-item.selected>.sidebar-link, .sidebar-nav ul .sidebar-item.selected>.sidebar-link.active, .sidebar-nav ul .sidebar-item>.sidebar-link.active {
+background-color: #2910e2;
+color: #fff;
+}
+
+/* Default active sidebar item styles */
+.sidebar-nav ul .sidebar-item.active > .sidebar-link {
+background-color: #3498db; /* Change this color for default active items */
+color: white; /* Text color when active */
+}
+
+/* Active sidebar item styles when 'srp' theme is active */
+.theme-srp .sidebar-nav ul .sidebar-item.active > .sidebar-link {
+background-color: #2910e2; /* Customize this color for the SRP theme */
+color: white; /* Text color for SRP active items */
+}
+
+/* Active sidebar item styles when 'gea' theme is active */
+.theme-gea .sidebar-nav ul .sidebar-item.active > .sidebar-link {
+background-color: #e25010; /* Customize this color for the GEA theme */
+color: white; /* Text color for GEA active items */
+}
+
+/* Default active item (SRP Theme) */
+.left-sidebar.theme-srp .sidebar-item.active > .sidebar-link {
+background-color: #2910e2; /* SRP theme active background */
+color: #fff; /* SRP theme active text color */
+}
+
+/* Active item for GEA Theme */
+.left-sidebar.theme-gea .sidebar-item.active > .sidebar-link {
+background-color: #e25010; /* GEA theme active background */
+color: #fff; /* GEA theme active text color */
+}
+
+/* General sidebar-link styles */
+.sidebar-item > .sidebar-link {
+background-color: transparent;
+color: inherit;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
