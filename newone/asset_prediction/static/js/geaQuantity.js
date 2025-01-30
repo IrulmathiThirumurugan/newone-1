@@ -1,425 +1,425 @@
-var jsonData = [
-    {
-        "S.NO": 1,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 0,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 2,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 6,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 1022.22
-    },
-    {
-        "S.NO": 3,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 0,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 4,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 0,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 5,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 4,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 681.48
-    },
-    {
-        "S.NO": 6,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4Y51C21217",
-        "Model_Name": "Go Wireless Multi-Device Mouse",
-        "Quantity": 1,
-        "Cost_per_unit": 170.37,
-        "Total_cost": 170.37
-    },
-    {
-        "S.NO": 7,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 9,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 4516.74
-    },
-    {
-        "S.NO": 8,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 4,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 2007.44
-    },
-    {
-        "S.NO": 9,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 0,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 10,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 0,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 11,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 3,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 1505.58
-    },
-    {
-        "S.NO": 12,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "25599-999-999",
-        "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
-        "Quantity": 0,
-        "Cost_per_unit": 501.86,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 13,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 1,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 116.66
-    },
-    {
-        "S.NO": 14,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 2,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 233.32
-    },
-    {
-        "S.NO": 15,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 0,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 16,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 1,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 116.66
-    },
-    {
-        "S.NO": 17,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 0,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 18,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4999-823-309",
-        "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
-        "Quantity": 0,
-        "Cost_per_unit": 116.66,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 19,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 5,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 766.6500000000001
-    },
-    {
-        "S.NO": 20,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 1,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 153.33
-    },
-    {
-        "S.NO": 21,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 22,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 10,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 1533.3
-    },
-    {
-        "S.NO": 23,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 4,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 613.32
-    },
-    {
-        "S.NO": 24,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4X41A30364",
-        "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 153.33,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 25,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 2,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 238.52
-    },
-    {
-        "S.NO": 26,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 27,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 28,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 29,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 30,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4X41A30365",
-        "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
-        "Quantity": 0,
-        "Cost_per_unit": 119.26,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 31,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 0,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 32,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 1,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 76.67
-    },
-    {
-        "S.NO": 33,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 0,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 34,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 0,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 35,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 2,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 153.34
-    },
-    {
-        "S.NO": 36,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4X30M86918",
-        "Model_Name": "Preferred Pro II USB Keyboard",
-        "Quantity": 0,
-        "Cost_per_unit": 76.67,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 37,
-        "Location": "9AAE101530ABB",
-        "City": "ALEKSANDROW LODZKI",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 38,
-        "Location": "9AAE104452ABB",
-        "City": "BIELSKO BIALA",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 39,
-        "Location": "9AAE100616ABB",
-        "City": "WARSZAWA",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 40,
-        "Location": "9AAE103835ABB",
-        "City": "KRAKOW",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 41,
-        "Location": "9AAE100611ABB",
-        "City": "PRZASNYSZ",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    },
-    {
-        "S.NO": 42,
-        "Location": "9AAE104087ABB",
-        "City": "WROCLAW",
-        "Product": "4X30L79922",
-        "Model_Name": "KB MICE_BO Essential Wired Combo",
-        "Quantity": 0,
-        "Cost_per_unit": 85.18,
-        "Total_cost": 0
-    }
-    ];
+// var jsonData = [
+//     {
+//         "S.NO": 1,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 0,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 2,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 6,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 1022.22
+//     },
+//     {
+//         "S.NO": 3,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 0,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 4,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 0,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 5,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 4,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 681.48
+//     },
+//     {
+//         "S.NO": 6,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4Y51C21217",
+//         "Model_Name": "Go Wireless Multi-Device Mouse",
+//         "Quantity": 1,
+//         "Cost_per_unit": 170.37,
+//         "Total_cost": 170.37
+//     },
+//     {
+//         "S.NO": 7,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 9,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 4516.74
+//     },
+//     {
+//         "S.NO": 8,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 4,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 2007.44
+//     },
+//     {
+//         "S.NO": 9,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 10,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 11,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 3,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 1505.58
+//     },
+//     {
+//         "S.NO": 12,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "25599-999-999",
+//         "Model_Name": "JABRA Evolve2 55 Link380a MS Stereo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 501.86,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 13,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 1,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 116.66
+//     },
+//     {
+//         "S.NO": 14,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 2,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 233.32
+//     },
+//     {
+//         "S.NO": 15,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 0,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 16,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 1,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 116.66
+//     },
+//     {
+//         "S.NO": 17,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 0,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 18,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4999-823-309",
+//         "Model_Name": "JABRA EVOLVE 20 SE STEREO MS",
+//         "Quantity": 0,
+//         "Cost_per_unit": 116.66,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 19,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 5,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 766.6500000000001
+//     },
+//     {
+//         "S.NO": 20,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 1,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 153.33
+//     },
+//     {
+//         "S.NO": 21,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 22,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 10,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 1533.3
+//     },
+//     {
+//         "S.NO": 23,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 4,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 613.32
+//     },
+//     {
+//         "S.NO": 24,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4X41A30364",
+//         "Model_Name": "BO Essential Plus 15.6 BackPack (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 153.33,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 25,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 2,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 238.52
+//     },
+//     {
+//         "S.NO": 26,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 27,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 28,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 29,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 30,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4X41A30365",
+//         "Model_Name": "BO Essential Plus 15.6 Topload (Eco)",
+//         "Quantity": 0,
+//         "Cost_per_unit": 119.26,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 31,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 0,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 32,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 1,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 76.67
+//     },
+//     {
+//         "S.NO": 33,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 0,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 34,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 0,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 35,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 2,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 153.34
+//     },
+//     {
+//         "S.NO": 36,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4X30M86918",
+//         "Model_Name": "Preferred Pro II USB Keyboard",
+//         "Quantity": 0,
+//         "Cost_per_unit": 76.67,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 37,
+//         "Location": "9AAE101530ABB",
+//         "City": "ALEKSANDROW LODZKI",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 38,
+//         "Location": "9AAE104452ABB",
+//         "City": "BIELSKO BIALA",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 39,
+//         "Location": "9AAE100616ABB",
+//         "City": "WARSZAWA",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 40,
+//         "Location": "9AAE103835ABB",
+//         "City": "KRAKOW",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 41,
+//         "Location": "9AAE100611ABB",
+//         "City": "PRZASNYSZ",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     },
+//     {
+//         "S.NO": 42,
+//         "Location": "9AAE104087ABB",
+//         "City": "WROCLAW",
+//         "Product": "4X30L79922",
+//         "Model_Name": "KB MICE_BO Essential Wired Combo",
+//         "Quantity": 0,
+//         "Cost_per_unit": 85.18,
+//         "Total_cost": 0
+//     }
+//     ];
    
 var productjs;
 
@@ -1568,39 +1568,39 @@ var productjs;
   // Current chart instance for bar chart destruction
   var currentBarChart = null;
 
-//   function getdata(get_url) {
+  function getdata(get_url) {
 
-//     return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
     
-//       $.ajax({
+      $.ajax({
     
-//         url: get_url,
+        url: get_url,
     
-//         type: 'GET',  // GET is the default, but you can specify it here
+        type: 'GET',  // GET is the default, but you can specify it here
     
-//         headers: {
+        headers: {
     
-//           'ngrok-skip-browser-warning': '1'  // Custom header to skip browser warning for ngrok
+          'ngrok-skip-browser-warning': '1'  // Custom header to skip browser warning for ngrok
     
-//         },
+        },
     
-//         success: function (data) {
+        success: function (data) {
     
-//           resolve(data);  // Resolve the promise with the API data
+          resolve(data);  // Resolve the promise with the API data
     
-//         },
+        },
     
-//         error: function (jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
     
-//           reject(new Error('Request failed: ' + textStatus));  // Reject the promise in case of error
+          reject(new Error('Request failed: ' + textStatus));  // Reject the promise in case of error
     
-//         }
+        }
     
-//       });
+      });
     
-//     });
+    });
     
-//     }
+    }
     
 //     var productjs;
 
@@ -1628,24 +1628,24 @@ var productjs;
         
   // Populate the table with data
   async function populateTable() {
-    // var Url_path = "http://127.0.0.1:5000/dashboardgeapq"
+    var Url_path = "https://piranha-robust-polliwog.ngrok-free.app/dashboardpqgea"
 
-    // var jsonData = await getdata("http://127.0.0.1:5000/dashboardgeapq");
+    var jsonData = await getdata("https://piranha-robust-polliwog.ngrok-free.app/dashboardpqgea");
 
-    // console.log(jsonData);
+    console.log(jsonData);
 
     const tableBody = document.querySelector('#predQuantityTable tbody');
     jsonData.forEach((item, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
    
-  <td class="border-bottom-0"><h6 class="fw-semibold mb-1">${item.Product}</h6></td>
+  <td class="border-bottom-0"><h6 class="fw-semibold mb-1">${item.PartNumber}</h6></td>
   <td class="border-bottom-0"><p class="mb-0 fw-normal">${item.Location}</p></td>
   <td class="border-bottom-0"><div class="d-flex align-items-center gap-2"><p class="mb-0 fw-normal">${item.City}</p></div></td>
-  <td class="border-bottom-0"><p class="fw-normal mb-0 fs-3">${item.Model_Name}</p></td>
+  <td class="border-bottom-0"><p class="fw-normal mb-0 fs-3">${item.ModelName}</p></td>
   <td class="border-bottom-0"><h6 class="fw-semibold mb-0 fs-4">${item.Quantity}</h6></td>
-  <td class="border-bottom-0"><p class="fw-semibold mb-0 fs-4">${item.Cost_per_unit}</p></td>
-  <td class="border-bottom-0"><p class="fw-semibold mb-0 fs-4">${item.Total_cost}</p></td>
+  <td class="border-bottom-0"><p class="fw-semibold mb-0 fs-4">${item.Unit_Cost}</p></td>
+  <td class="border-bottom-0"><p class="fw-semibold mb-0 fs-4">${item.Total_Cost}</p></td>
         `;
    
         // Automatically select the first row
