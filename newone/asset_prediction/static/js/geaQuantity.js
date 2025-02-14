@@ -1639,7 +1639,7 @@ var productjs;
         const row = document.createElement('tr');
         row.innerHTML = `
    
-  <td class="border-bottom-0"><h6 class="fw-semibold mb-1">${item.PartNumber}</h6></td>
+  <td class="border-bottom-0"><h6 class="fw-semibold mb-1">${item.Part_Number}</h6></td>
   <td class="border-bottom-0"><p class="mb-0 fw-normal">${item.Location}</p></td>
   <td class="border-bottom-0"><div class="d-flex align-items-center gap-2"><p class="mb-0 fw-normal">${item.City}</p></div></td>
   <td class="border-bottom-0"><p class="fw-normal mb-0 fs-3">${item.ModelName}</p></td>
